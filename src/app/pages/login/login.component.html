@@ -1,0 +1,62 @@
+<div id="loginPage" class="relative h-full">
+    <p-panel header="Authentication" class="login-panel-container">
+        <form [formGroup]="loginForm">
+            <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid">
+                <div class="ui-grid-row mb-4 ">
+                    <div class="ui-grid-col-2">
+                        Username:
+                    </div>
+                    <div class="ui-grid-col-6 mt-2">
+                        <input
+                            pInputText
+                            class="form-control border-solid border-2 border-gray-500"
+                            type="text"
+                            formControlName="username"
+                            name="username"
+                        >
+                    </div>
+                    <div class="ui-grid-col-4 mt-2 h-5">
+                        <div [hidden]="loginForm.controls['username'].valid || !loginForm.controls['username'].dirty" class="text-red-500">
+                            Username is required
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-grid-row mb-4 ">
+                    <div class="ui-grid-col-2">
+                        Password:
+                    </div>
+                    <div class="ui-grid-col-6 mt-2 h-5">
+                        <input
+                            pInputText
+                            class="form-control border-solid border-2 border-gray-500"
+                            type="password"
+                            formControlName="password"
+                            name="password"
+                        >
+                    </div>
+                    <div class="ui-grid-col-4 mt-2 h-5">
+                        <div [hidden]="loginForm.controls['password'].valid || !loginForm.controls['password'].dirty" class="text-red-500">
+                            Password is required
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-grid-row">
+                    <div class="ui-grid-col-6 mt-2">
+                        <button
+                            pButton
+                            type="submit"
+                            label="Submit"
+                            [disabled]="!loginForm.valid"
+                            class="submit-button"
+                            (click)="authenticateUser()"
+                        ></button>
+                    </div>
+                    <div class="ui-grid-col-4"></div>
+                </div>
+            </div>
+        </form>
+
+        <p-messages [(value)]="failureMessages" [enableService]="false"></p-messages>
+
+    </p-panel>
+</div>
