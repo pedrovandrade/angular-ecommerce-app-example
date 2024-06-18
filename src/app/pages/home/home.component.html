@@ -1,1 +1,24 @@
-<p>home works!</p>
+<app-page-template>
+
+    <div
+        class="w-full text-center text-slate-600 m-0">
+        <div class="text-base pb-10 pt-40">
+            {{ 'Your new on-line store' | uppercase }}
+        </div>
+
+        <div class="text-5xl mx-20 pb-20 pt-5">
+            Welcome to eCommerceSite, where on-line shopping is made easier.
+        </div>
+
+        <div class="pb-5">
+            <button
+                pButton
+                class="text-lg text-white font-bold px-10 py-2 bg-red-500"
+                (click)="navigateTo('/products')"
+            >
+                Shop now
+            </button>
+        </div>
+    </div>
+
+</app-page-template>

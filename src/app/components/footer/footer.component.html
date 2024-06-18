@@ -1,0 +1,48 @@
+<p-toolbar 
+    styleClass="rounded-none bottom-0 absolute w-full"
+>
+        <!-- ----------------- Copyright statement ----------------- -->
+        <ng-template pTemplate="start">
+            <p class="text-gray-600 text-lg">Copyright © 2024</p>
+        </ng-template>
+
+        <!-- ----------------- Navigation buttons ----------------- -->
+        <ng-template pTemplate="center">
+            <div class="flex flex-wrap align-items-center gap-7">
+
+                <div [class]="navButtonCssClass" (click)="navigateTo('/home')">
+                    Home
+                </div>
+
+                <div [class]="navButtonCssClass" (click)="navigateTo('/products')">
+                    Shop
+                </div>
+
+                <div [class]="navButtonCssClass" (click)="navigateTo('/contact')">
+                    Contact
+                </div>
+
+                <div [class]="navButtonCssClass" (click)="navigateTo('/about')">
+                    About us
+                </div>
+
+            </div>
+        </ng-template>
+
+        <!-- ----------------- Link to the site's Github page ----------------- -->
+        <ng-template pTemplate="end">
+            <div class="flex align-items-center mx-10 my-2">
+                <a
+                    href="https://github.com/pedrovandrade/angular-ecommerce-app-example"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <p-avatar
+                        icon="pi pi-github"
+                        size="large"
+                        class="hover:text-gray-500"
+                    />
+                </a>
+            </div>
+        </ng-template>
+</p-toolbar>

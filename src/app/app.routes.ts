@@ -5,6 +5,8 @@ import { authGuard } from './services/auth/auth.guard'
 import { loggedOutGuard } from './services/auth/logged-out.guard'
 import { ProductsComponent } from './pages/products/products.component'
 import { ProductDetailComponent } from './pages/products/product-detail/product-detail.component'
+import { ContactComponent } from './pages/contact/contact.component'
+import { AboutComponent } from './pages/about/about.component'
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -12,4 +14,6 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent, canActivate: [authGuard] },
     { path: 'products', component: ProductsComponent, canActivate: [authGuard] },
     { path: 'products/:id', component: ProductDetailComponent, canActivate: [authGuard] },
+    { path: 'contact', component: ContactComponent, canActivate: [authGuard] },
+    { path: 'about', component: AboutComponent, canActivate: [authGuard] },
 ]

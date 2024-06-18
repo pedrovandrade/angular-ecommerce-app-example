@@ -1,0 +1,67 @@
+<p-toolbar 
+    styleClass="bg-gray-900 rounded-none" 
+    [style]="{ 'background-image': 'linear-gradient(to right, var(--bluegray-500), var(--bluegray-800))' }"
+>
+        <!-- ----------------- Dummy Logo / Brand name ----------------- -->
+        <ng-template pTemplate="start">
+            <p class="text-white text-2xl">eCommerceSite</p>
+        </ng-template>
+
+        <!-- ----------------- Navigation buttons ----------------- -->
+        <ng-template pTemplate="center">
+            <div class="flex flex-wrap align-items-center gap-7">
+
+                <button
+                    [class]="navButtonCssClass"
+                    pTooltip="Home"
+                    tooltipPosition="bottom"
+                    (click)="navigateTo('/home')"
+                >
+                    <i class="pi pi-home text-2xl"></i>
+                </button>
+
+                <button
+                    [class]="navButtonCssClass"
+                    pTooltip="Shop"
+                    tooltipPosition="bottom"
+                    (click)="navigateTo('/products')"
+                >
+                    <i class="pi pi-shopping-bag text-2xl"></i>
+                </button>
+
+                <button
+                    [class]="navButtonCssClass"
+                    pTooltip="Contact"
+                    tooltipPosition="bottom"
+                    (click)="navigateTo('/contact')"
+                >
+                    <i class="pi pi-phone text-2xl"></i>
+                </button>
+
+                <button
+                    [class]="navButtonCssClass"
+                    pTooltip="About us"
+                    tooltipPosition="bottom"
+                    (click)="navigateTo('/about')"
+                >
+                    <i class="pi pi-info-circle text-2xl"></i>
+                </button>
+
+            </div>
+        </ng-template>
+
+        <!-- ----------------- Shopping cart icon ----------------- -->
+        <ng-template pTemplate="end">
+            <div class="flex align-items-center mx-10 my-2">
+                <p-avatar
+                    icon="pi pi-shopping-cart" 
+                    pBadge 
+                    [value]="selectedItems.length" 
+                    size="large"
+                    class="hover:text-gray-500"
+                    pTooltip="View cart"
+                    tooltipPosition="bottom"
+                />
+            </div>
+        </ng-template>
+</p-toolbar>

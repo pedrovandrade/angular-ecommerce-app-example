@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import { PageTemplateComponent } from '../../components/page-template/page-template.component';
 
 @Component({
-  selector: 'app-products',
+  selector: 'app-about',
   standalone: true,
   imports: [
     PageTemplateComponent,
   ],
-  templateUrl: './products.component.html',
-  styleUrl: './products.component.scss'
+  templateUrl: './about.component.html',
+  styleUrl: './about.component.scss'
 })
-export class ProductsComponent {
+export class AboutComponent {
 
 }
